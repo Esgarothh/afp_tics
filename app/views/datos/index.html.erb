@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Datos</h1>
+
+<table class="container">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Email</th>
+      <th>Edad</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @datos.each do |dato| %>
+      <tr>
+        <td><%= dato.nombre %></td>
+        <td><%= dato.apellido %></td>
+        <td><%= dato.email %></td>
+        <td><%= dato.edad %></td>
+        <td><%= link_to 'Show', dato %></td>
+        <td><%= link_to 'Edit', edit_dato_path(dato) %></td>
+        <td><%= link_to 'Destroy', dato, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dato', new_dato_path %>
