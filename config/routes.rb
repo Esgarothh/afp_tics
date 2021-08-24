@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'pablo/index'
   resources :datos
   get 'inicio/index'
   root 'inicio#index'
