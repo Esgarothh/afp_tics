@@ -1,29 +1,6 @@
-<h1> Titulo </h1>
+<h1> Simulador AFP </h1>
 
 <br>
 
-<div class = "d-flex justify-content-center">
 
-	<%= form_with  do |form| %> 
-	<div class="col-md-6">
-
-		<div class="form-group">
-			Nombre: <%= form.text_field :nombre, class:"btn-secondary" %>
-		</div>
-
-		<div class="form-group">
-			Correo: <%= form.text_field :correo %>
-		</div>
-		<div class="form-group">
-			numerox2: <%= form.text_field :num %>
-		</div>
-
-		<div class="btn btn-link">
-    		<%= form.submit %>
-  		</div>
-	
-	</div>
-<h1> tu numero multiplicado por 2 es= <%= @auxiliar %> </h1>
-	<% end %>
-
-</div>	
+<%= render "main/template", @auxilar%>

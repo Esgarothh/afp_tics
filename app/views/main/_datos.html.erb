@@ -1,0 +1,34 @@
+<div class = "d-flex justify-content-center">
+	<%= form_with  do |form| %> 
+		<div class="col-md">
+			<div class="row">
+				<div class="form-group">
+					Nombre: <%= form.text_field :nombre , class:"form-control"%>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group">
+					Correo: <%= form.text_field :correo , class:"form-control"%>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group">
+					Genero: <%= form.select :genero, ["----","Femenino","Masculino"] , class:"form-control"%>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group">
+					numerox2: <%= form.text_field :edad , class:"form-control"%>
+				</div>
+			</div>
+			<div cclass="row"
+				<div class="btn btn-link">
+		    		<%= form.submit %>
+		  		</div>
+			</div>
+		</div>
+<h1> tu genero es = <%= params[:genero] %> </h1>
+
+	<% end %>
+
+</div>	
