@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   resources :datos
   get 'inicio/index'
   get 'pablo/datos'
-
+  get 'main/pagina2'
+  get 'main/pagina3'
   root 'pablo#index'
   #root 'inicio#index'
   get 'main/index'
