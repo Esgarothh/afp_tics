@@ -1,19 +1,27 @@
 class MainController < ApplicationController
 
 def index
-    if params[:num] != nil
-      @auxiliar = params[:num].to_i*2
+
+    @tasaInteres = 0.0366
+    @probabilidadMortalidad = 0.5
+    @sumador = 0 
+
+    if params[:nombre] != nil
+      @nombre = params[:nombre]
+      @sueldo= params[:Edad3].to_i
+      @edadJub = params[:edadJub]
+
     else
       @auxiliar = params[:num]
   end
     
 end
 
-def create
-    @usuario = Usuario.new(params:[nombre])
+def pagina2
+  if request.post?
+      redirect_to pablo_path
+  end
     
-      redirect_to pablo_index_path
-  
 end
   
 

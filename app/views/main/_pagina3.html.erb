@@ -1,46 +1,43 @@
-<div class="container-fluid register">
-                <div class="row">
-                    <div class="col-md-3 register-left">
-                        <img src="https://www.talosmarthome.com/wp-content/uploads/2019/11/FAQ-icon-Talo.png" alt=""/>
-                        <h3>ESTO GANARAS DE PENSION :</h3>
-                    </div>
-                    <div class="col-md-9 register-right">
-                        
-                                <h3 class="register-heading">blablabla lorem ipsum</h3>
-                                <div class="row register-form">
-                                
-                                    <div class="col-md-6">
-                                        <%= form_with(model: @usuario, local: true) do |form|%> 
-                                        <div class="form-group">
-                                            <%= form.text_field :nombre , class:"form-control", placeholder: "Nombre"%>
-                                        </div>
-                                        <br>
-                                        <div class="form-group">
-                                            <%= form.text_field :correo , class:"form-control", placeholder: "Correo"%>
-                                        </div>
-                                        <br>
-                                        <div class="form-group">
-                                            <%= form.text_field :Edad , class:"form-control", placeholder: "Edad"%>
-                                        </div>
-                                        <br>
-                                        
-                                       
-                                    </div>
-                                    <div class="col-md-4">
-                                        
-                                           <ul>Género: <%= form.select :genero, ["Femenino","Masculino"] , class:"form-select",arialabel:".form-select-lg example" %></ul>
-                                        
-                                           <%= form.submit "Continuar" ,class:"btnRegister" %>
-                                        
-                                    </div>
-                                 
-                                                
-                                      
-                                </div>  
-                            </div>
+<div class="container-fluid register bak3">
+            <section id="three" style="height:100vh;padding-top:10%;">   
+                <div class="register">
+                        <div class="row bak1">
+
+                                <div class="col-md-3 register-left ">
+                                    <img src="https://www.talosmarthome.com/wp-content/uploads/2019/11/FAQ-icon-Talo.png" alt=""/>
+                                    <h3>Ahora ingresa tu situacion previsional</h3>
+                                </div>
+                                <div class="col-md-9 register-right">
                             
+                                    <h3 class="register-heading">Ingresa otra cosa</h3>
+                                    <div class="row register-form">
+                                    
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <%= form.text_field :nombre3 , class:"form-control", placeholder: "Nombre"%>
+                                            </div>
+                                            <br>
+                                            <div class="form-group">
+                                                <%= form.text_field :correo3 , class:"form-control", placeholder: "Correo"%>
+                                            </div>
+                                            <br>
+                                            <div class="form-group">
+                                                <%= form.text_field :Edad3 , class:"form-control", placeholder: "Edad"%>
+                                            </div>
+                                            <br>
+                                            
+                                           
+                                        </div>
+                                        <div class="col-md-4">
+                                            
+                                               <ul>Género: <%= form.select :genero3, ["Femenino","Masculino"] , class:"form-select",arialabel:".form-select-lg example" %></ul>
+                                            
+                                               <%= form.submit "Terminar" ,class:"btnRegister" %>
+                                            
+                                        </div>
+                                    </div>  
+                                </div>
                         </div>
-                    </div>
                 </div>
-<%end%>
-            </div>
+            </section>
+        </div>
