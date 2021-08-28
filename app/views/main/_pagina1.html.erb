@@ -61,25 +61,60 @@
                                     
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                Edad que piensa jubilar:
-                                                <%= form.number_field :edadJub , class:"form-control", placeholder: ""%>
+                                               
+                                                <%= form.number_field :edadJub , class:"form-control", placeholder: " Edad que piensa jubilar:"%>
                                             </div>
-                                            <br>
-                                            <div class="form-group">
-                                                <%= form.text_field :fondoP , class:"form-control", placeholder: "Correo"%>
-                                            </div>
-                                            <br>
-                                            <div class="form-group">
-                                                <%= form.text_field :Edad2 , class:"form-control", placeholder: "Edad"%>
-                                            </div>
-                                            <br>
                                             
+                                            <br>
+                                            <div class="form-group">
+                                                <%= form.text_field :Mcotiza , class:"form-control", placeholder: "Meses que cotiza al año"%>
+                                            </div>
+                                            <br>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    Sueldo entre los 18 y 35 años
+                                                    <%= form.number_field :InterA , class:"form-control"%>
+                                                </div>
+                                            
+                                                    <br>
+                                            
+                                                <div class="form-group">
+                                                    Sueldo entre los 35 y 55
+                                                    <%= form.number_field :InterB , class:"form-control"%>
+                                                </div>
+                                            
+                                                    <br>
+                                                <div class="form-group">
+                                                    Sueldo entre los 55 y 65
+                                                    <%= form.number_field :InterC , class:"form-control"%>
+                                                </div>
+                                                    <br>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    
+                                                    <ul>Fondo en este periodo: <%= form.select :fondoPerA, ["A","B","C","D","E"] , class:"form-select",arialabel:".form-select-lg example" %></ul>
+                                                </div>
+                                                    <br>
+                                                <div class="form-group">
+                                                    
+                                                    <ul>Fondo en este periodo: <%= form.select :fondoPerB, ["A","B","C","D","E"] , class:"form-select",arialabel:".form-select-lg example" %></ul>
+                                                </div>
+                                                    <br>
+                                                <div class="form-group">
+                                                    
+                                                    <ul>Fondo en este periodo: <%= form.select :fondoPerC, ["B","C","D","E"] , class:"form-select",arialabel:".form-select-lg example" %></ul>
+                                                </div>
+                                                    <br>
+                                            </div>
+                                        </div>
                                            
                                         </div>
                                         <div class="col-md-4">
-
+                                                <br>
                                                 <ul>Pension: <%= form.select :pension, ["Capital","Cuprum","Habitat","Modelo","PlanVital","Provida","Uno"] , class:"form-select",arialabel:".form-select-lg example" %></ul>
-
+                                                <br>
                                                 <ul>Fondo de Pension: <%= form.select :fondoP, ["A","B","C","D","E"] , class:"form-select",arialabel:".form-select-lg example" %></ul>
                                             
                                                <%= link_to "Continuar", "#three",class:"btnRegister"  %>
