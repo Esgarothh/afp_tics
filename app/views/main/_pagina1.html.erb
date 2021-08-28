@@ -71,58 +71,109 @@
                                             </div>
                                             <br>
                                         <div class="row">
-                                            <div class="col">
+                                            <div class="col-md-5">
                                                 <div class="form-group">
                                                     Sueldo entre los 18 y 35 años
-                                                    <%= form.number_field :InterA , class:"form-control"%>
+                                                    <%= form.number_field :InterA %>
                                                 </div>
                                             
                                                     <br>
                                             
                                                 <div class="form-group">
                                                     Sueldo entre los 35 y 55
-                                                    <%= form.number_field :InterB , class:"form-control"%>
+                                                    <%= form.number_field :InterB %>
                                                 </div>
                                             
                                                     <br>
                                                 <div class="form-group">
                                                     Sueldo entre los 55 y 65
-                                                    <%= form.number_field :InterC , class:"form-control"%>
+                                                    <%= form.number_field :InterC%>
                                                 </div>
                                                     <br>
                                             </div>
-                                            <div class="col">
+                                            <div class="col-md-5">
+                                                <br>
+
                                                 <div class="form-group">
                                                     
-                                                    <ul>Fondo en este periodo: <%= form.select :fondoPerA, ["A","B","C","D","E"] , class:"form-select",arialabel:".form-select-lg example" %></ul>
+                                                    Fondo en este periodo: <%= form.select :fondoPerA, ["A","B","C","D","E"] , class:"form-select",arialabel:".form-select-lg example" %>
                                                 </div>
-                                                    <br>
+                                                    <br><br>
                                                 <div class="form-group">
                                                     
-                                                    <ul>Fondo en este periodo: <%= form.select :fondoPerB, ["A","B","C","D","E"] , class:"form-select",arialabel:".form-select-lg example" %></ul>
+                                                    Fondo en este periodo: <%= form.select :fondoPerB, ["A","B","C","D","E"] , class:"form-select",arialabel:".form-select-lg example" %>
                                                 </div>
-                                                    <br>
+                                                    <br><br>
                                                 <div class="form-group">
                                                     
-                                                    <ul>Fondo en este periodo:
-                                                    <%= form.select :fondoPerC, ["B","C","D","E"] , class:"form-select",arialabel:".form-select-lg example" %> </ul>
+                                                    Fondo en este periodo:
+                                                    <%= form.select :fondoPerC, ["B","C","D","E"] , class:"form-select",arialabel:".form-select-lg example" %> 
                                                 </div>
                                                     <br>
                                             </div>
                                         </div>
                                            
                                         </div>
-                                        <div class="col-md-4">
-                                                <br>
+                                        <div class="col">
+                                                
                                                 <div class="form-group">
                                                     <%= form.number_field :ahorrado , class:"form-control", placeholder: "Ahorro actual"%>
                                                 </div>
                                         
+                                                <br> 
+                                                <div class="row">
+                                                <div class="col-md-5">
+                                                Pension: <%= form.select :pension, ["Capital","Cuprum","Habitat","Modelo","PlanVital","Provida","Uno"] , class:"form-select",arialabel:".form-select-lg example" %>
+                                                </div>
+                                                <div class="col-md-5">
+                                                Fondo de Pension: <%= form.select :fondoP, ["A","B","C","D","E"] , class:"form-select",arialabel:".form-select-lg example" %></ul>
+                                                </div>
+                                                </div>
+
                                                 <br>
-                                                <ul>Pension: <%= form.select :pension, ["Capital","Cuprum","Habitat","Modelo","PlanVital","Provida","Uno"] , class:"form-select",arialabel:".form-select-lg example" %></ul>
-                                                <br>
-                                                <ul>Fondo de Pension: <%= form.select :fondoP, ["A","B","C","D","E"] , class:"form-select",arialabel:".form-select-lg example" %></ul>
-                                            
+                                                <div class="form-group container-fluid">
+                                                <h5>¿Desea integrar sus propias rentabilidades?
+                                                <%= form.radio_button :experto, 'Si'%>
+                                                <%= label :experto_email, 'Si' %>
+                                                </div></h5>
+
+                                                <div class="row">
+                                                    <div class="col-md-5">
+                                                        <div class="form-group">
+                                                            Rentabilidad A
+                                                            <%= form.number_field :RentA,step: :any,placeholder: "5.55%" %>
+                                                        </div>
+                                                            <br>
+                                                        <div class="form-group">
+                                                            Rentabilidad B
+                                                            <%= form.number_field :RentB,step: :any,placeholder: "5.55%"%>
+                                                        </div>
+                                                    
+                                                            <br>
+                                                        <div class="form-group">
+                                                            Rentabilidad C
+                                                            <%= form.number_field :RentC,vplaceholder: "5.55%"%>
+                                                        </div>
+                                                            <br>
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <div class="form-group">
+                                                            Rentabilidad D
+                                                            <%= form.number_field :RentD,step: :any,placeholder: "5.55%"%>
+                                                        </div>
+                                                            <br>
+                                                        <div class="form-group">
+                                                            Rentabilidad E
+                                                            <%= form.number_field :RentE,step: :any,placeholder: "5.55%"%>
+                                                        </div>
+                                                            <br>
+                                                    </div>
+                                                </div>
+
+
+
+
+
                                                <%= link_to "Continuar", "#three",class:"btnRegister"  %>
                                             
                                         </div>

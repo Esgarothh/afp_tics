@@ -1,5 +1,8 @@
 
 
 	<%= render "main/pagina1"%>
-	<%= render "main/resultados"%>
+
+	<%= if params[:nombre] !=nil 
+	 render "main/resultados" 
+	 end%>
 
