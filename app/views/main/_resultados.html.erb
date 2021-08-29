@@ -1,15 +1,151 @@
+<!--
+    <div class="row bak6" style="padding-bottom:20%;">
+                            <center>
+                                <div class="col-md-2 resultados ">
+                                    <img src="https://marketing.maderea.es/wp-content/uploads/2021/04/estudiamos-resultados.png" alt=""/>
 
-<div class="container-fluid", style="padding-top: 10%;"> 
+                                    <h3>Tus resultados</h3>
+                                    <ol> 
+                                    <li>Con un sueldo bruto de <%=@perA%> por <%=35-@edad%> años </li>
+                                    <li>Con un sueldo bruto de <%=@perB%> por <%=55-35%> años</li>
+                                    <li>Con un sueldo bruto de <%=@perC%> por <%=65-55%> años</li>
+                                    <li>Ahorro Total sin CNU: $<%= @ahorradoEsperado.to_i  %> </li>
+                                    </ol>
+                                        
+                                    
+                                
+                                </div>
+                                <div class="row">
+                            </center>
+
+            <div class="col-lg-4">
+                  <center>
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+                  <h2>Caso optimista</h2>
+                  <p>Tu sueldo esperado Optimista : $<%= @sueldoOptimista.to_i  %></p>
+                  <p><a class="btn btn-secondary" href="#">View details »</a></p>
+                  </center>
+            </div>
+    
+            <div class="col-lg-4">
+                  <center>
+                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+                
+                    <h2>Caso esperado</h2>
+                    <p>Tu sueldo esperado : $<%= @sueldoEsperado.to_i  %></p>
+                
+                    <p><a class="btn btn-secondary" href="#">View details »</a></p>
+                    </center>
+            </div>
+            <div class="col-lg-4">
+                <center>
+                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+                
+                    <h2>Caso pesimista</h2>
+                    <p>Tu sueldo esperado Pesimista: $<%= @sueldoPesimista.to_i  %> </p>
+                
+                    <p><a class="btn btn-secondary" href="#">View details »</a></p>
+                    </center>
+            </div> 
+    </div>
+</div>   -->
+
+<div class="bak6" style="padding-bottom:20%;padding-top:20%;">
+          <div class="row center" style="padding-left:50px;padding-right:50px;">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-warning card-header-icon">
+                  <div class="card-icon">
+                    <i class="material-icons">Pension probable</i>
+                  </div>
+                  <p class="card-category">Sueldo</p>
+                  <h3 class="card-title">
+
+                    <b>$<%= @sueldoEsperado.to_i  %></b><br> Basandose en una rentabilidad estandar
+                    
+                  </h3>
+                </div>
+                <div class="card-footer">
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-success card-header-icon">
+                  <div class="card-icon">
+                    <i class="material-icons">Pension Optimista</i>
+                  </div>
+                  <p class="card-category">Sueldo</p>
+                  <h3 class="card-title">
+
+                    <b>$<%= @sueldoOptimista.to_i  %></b><br> Si la rentabilidad de tus fondos progresa bien, podrias obtener esta pension.
+                    
+                  </h3>
+                </div>
+                <div class="card-footer">
+                 
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-danger card-header-icon">
+                  <div class="card-icon">
+                    <i class="material-icons">Pension Pesimista</i>
+                  </div>
+                  <p class="card-category">Sueldo</p>
+                  <h3 class="card-title">
+
+                    <br><b>$  <%= @sueldoPesimista.to_i  %></b><br> En caso de pertenecer a fondos de alto riesgo o que la rentabilidad actual de tu fondo de pensiones no aumente, podria presentarse este escenario.
+                    
+                  </h3>
+                </div>
+                <div class="card-footer">
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-info card-header-icon">
+                  <div class="card-icon">
+                    <i class="fa fa-twitter"></i>
+                  </div>
+                  <p class="card-category">APV mensual sugerido para llegar a pension mencionada:<%= params[:pIdeal] %>  </p>
+                  <h3 class="card-title"><%= @apvNecesaria.to_i  %></h3>
+                </div>
+                <div class="card-footer">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container ">
+            <center>
+            <%= button_to "Volver a simular", main_index_path, :method => "get" %>
+            </center>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!---
+
+<div class="container-fluid bak3", style="padding-top: 10%;padding-left:10%;"> 
             <section id="two" style="height:100vh;">   
                 <div class="register">
                     <div class="row">
-                            	
-                                <div class="col-md-9">
-                            
-                                    <h1 class="register-heading">Tus resultados </h1>
-                                    <div class="row register-form">
                                     
-                                        <div class="col-md-4">
+                                        <div class="col-md-auto">
+                                            <h2>Tus resultados </h2>
+                                            <div class="register">
+                                                <img src="https://marketing.maderea.es/wp-content/uploads/2021/04/estudiamos-resultados.png" alt=""/>
+                                                <h1>Tus Resultados</h1>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-auto">
 
                                          <h1>Con un sueldo bruto de = <%=@perA%> por <%=35-@edad%> años</h1>
 
@@ -19,24 +155,22 @@
 
                                      </div>
 
-                                        <div class="col-md-5">
+                                        <div class="col">
 
                                          <h1>Tu sueldo esperado : $<%= @sueldoEsperado.to_i  %> </h1>
                                          <h1>Tu sueldo esperado Optimista : $<%= @sueldoOptimista.to_i  %> </h1>
                                          <h1>Tu sueldo esperado Pesimista: $<%= @sueldoPesimista.to_i  %> </h1>
                                          <h1>Ahorro Total SInCNu: $<%= @ahorradoEsperado.to_i  %> </h1> 
 
-                                         <h1>global: $<%= @aux  %> </h1>
+                                         <h1>Apv Necesaria para alcanzar su pension deseada : $<%= @apvNecesaria  %> </h1>
                                             
                                            
                                         </div>
                                        
                                     </div>  
+
                                 </div> 
-                               	<div class="col-md-1 register-left">
-                            	    <img src="https://www.talosmarthome.com/wp-content/uploads/2019/11/	FAQ-icon-Talo.png" alt=""/>
-                            	    <h3>Ahora ingresa tu situacion previsional</h3>
-                            	</div>     
+                               	    
                     </div>
                 </div>
             </section>

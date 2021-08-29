@@ -2,11 +2,12 @@
         <div class="container-fluid bak2", style="padding-top: 10%;"> 
             <section id="one" style="height:100vh;">
                 <div class="register">
-                    <div class="row bak1">
+                    <div class="row bak2">
                             <div class="col-md-3 register-left ">
                                 <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
-                                <h3>Bienvenido</h3>
-                                <p>Simulador de pensiones!</p>
+                                <h1>SIMULADOR AFP</h1> <h3>
+                                Simulador de pensiones que hace uso de variables estadísticas
+                                para ayudarlo a entender y simular sus valores previsionales y asi poder preparar una eventual jubilacion digna</h3>
                             
                             </div>
                             <div class="col-md-9 register-right">
@@ -51,12 +52,12 @@
                 <div class="register">
                     <div class="row">
                             <div class="col-md-3 register-left">
-                                <img src="https://www.talosmarthome.com/wp-content/uploads/2019/11/FAQ-icon-Talo.png" alt=""/>
-                                <h3>Ahora ingresa tu situacion previsional</h3>
+                                <img src="https://www.talosmarthome.com/wp-content/uploads/2019/11/FAQ-icon-Talo.png" alt=""/> <br>
+                                <h2>A continuación rellena los casilleros con los valores correspondientes, para mayor informacion respecto a tus fondos ahorrados te sugerimos dirigirte al sitio web de tu administradora de pensiones</h2>
                             </div>
                                 <div class="col-md-9 register-right">
                             
-                                    <h3 class="register-heading">Ingresa otra cosa</h3>
+                                    <h3 class="register-heading">Ingresa Tu situacion previsional</h3>
                                     <div class="row register-form">
                                     
                                         <div class="col-md-6">
@@ -88,6 +89,13 @@
                                                 <div class="form-group">
                                                     Sueldo entre los 55 y 65
                                                     <%= form.number_field :InterC%>
+                                                </div>
+                                                <br>
+                                                <div class="form-group">
+                                                    
+                                                    Puede añadir una pension deseada y se calculara el APV
+                                                    necesario para llegar a este valor:
+                                                    <%= form.number_field :pIdeal,placeholder:"Pension Mensual Deseada"%> 
                                                 </div>
                                                     <br>
                                             </div>
@@ -174,7 +182,7 @@
 
 
 
-                                               <%= link_to "Continuar", "#three",class:"btnRegister"  %>
+                                               <%= form.submit "Terminar" ,class:"btnRegister" %>
                                             
                                         </div>
                                        
@@ -184,48 +192,6 @@
                 </div>
             </section>
         </div>
-        <div class="container-fluid register bak2">
-            <section id="three" style="height:100vh;padding-top:10%;">   
-                <div class="register">
-                        <div class="row bak1">
-
-                                <div class="col-md-3 register-left ">
-                                    <img src="https://www.talosmarthome.com/wp-content/uploads/2019/11/FAQ-icon-Talo.png" alt=""/>
-                                    <h3>Ahora ingresa tu situacion previsional</h3>
-                                </div>
-                                <div class="col-md-9 register-right">
-                            
-                                    <h3 class="register-heading">Ingresa otra cosa</h3>
-                                    <div class="row register-form">
-                                    
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <%= form.text_field :nombre3 , class:"form-control", placeholder: "Nombre"%>
-                                            </div>
-                                            <br>
-                                            <div class="form-group">
-                                                <%= form.text_field :correo3 , class:"form-control", placeholder: "Correo"%>
-                                            </div>
-                                            <br>
-                                            <div class="form-group">
-                                                <%= form.text_field :Edad3 , class:"form-control", placeholder: "Edad"%>
-                                            </div>
-                                            <br>
-                                            
-                                           
-                                        </div>
-                                        <div class="col-md-4">
-                                            
-                                               <ul>F: <%= form.select :genero3, ["Femenino","Masculino"] , class:"form-select",arialabel:".form-select-lg example" %></ul>
-                                            
-                                               <%= form.submit "Terminar" ,class:"btnRegister" %>
-                                            
-                                        </div>
-                                    </div>  
-                                </div>
-                        </div>
-                </div>
-            </section>
-        </div>
+       
         
     <%end%> 

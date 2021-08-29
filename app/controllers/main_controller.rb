@@ -153,23 +153,23 @@ class MainController < ApplicationController
       @ahorradoOptimista = plataTotalOptimista
       @ahorradoPesimista = plataTotalPesimista
 
+      @ahorradoTotalIdeal= params[:pIdeal].to_i*(@cnu*12) #plata ahorrada total para ese sueldo
+      @diferencia = @ahorradoTotalIdeal-@ahorradoEsperado  #plata necesaria de conseguir con APV
+
+      @apvNecesaria = plataTotalInversa
+
       @sueldoEsperadoSinCnu = @ahorrado
       @sueldoEsperado = @ahorradoEsperado/(@cnu*12)
       @sueldoPesimista = @ahorradoPesimista/(@cnu*12)
       @sueldoOptimista = @ahorradoOptimista/(@cnu*12)
 
       
-
+      
     end
       #entre 18 y 35 año
   end
          
-      
       #entre x edad y 35 
-      #
-  
-
-
 
   def meses(lim,edad)
     return (lim-edad)*@mesesCotiza
@@ -283,7 +283,7 @@ def plataTotalPesimista
 
       end
       aux=0
-print "cuota1:",cuota1,"\n"
+    print "cuota1:",cuota1,"\n"
         if @edad >55 && @edad<@edadJub 
           aux2 = @edad
         else
@@ -296,7 +296,7 @@ print "cuota1:",cuota1,"\n"
         print "-",@fondo3Opti,"-"
       end
       aux=0
-print "cuota1:",cuota1,"\n"
+    print "cuota1:",cuota1,"\n"
     return cuota1
   end
 
@@ -306,6 +306,53 @@ print "cuota1:",cuota1,"\n"
         redirect_to pablo_path
     end
   end
-
 end
+
+def plataTotalInversa
+
+  cuota1 = 0
+  @apvMensual = 0
+  @rentaAPV = 1.07
+  while cuota1<@diferencia
+  @apvMensual += 5000
+  cuota1 = 0
+  aux = 0
+  aux2 = 0
+      while aux < 35-@edad     #20 a 35 recorrido = 15
+        cuota1 = (cuota1 +@apvMensual*@mesesCotiza)*@fondo1Espe #crece 5.2% al año
+        aux+=1
+      end
+      aux= 0
+
+        if @edad >35 && @edad<55 
+          aux2 = @edad
+        else
+          aux2 = 35
+        end
+
+      while aux < 55-aux2   # 20 A 0   del 35 al 55 || edad al 55
+        cuota1 = (cuota1 + @apvMensual*@mesesCotiza)*@fondo2Espe
+        aux+=1
+
+      end
+      aux=0
+
+        if @edad >55 && @edad<@edadJub 
+          aux2 = @edad
+        else
+          aux2 = 55
+        end
+
+      while aux <@edadJub-aux2
+        cuota1 = (cuota1 + @apvMensual*@mesesCotiza)*@fondo3Espe
+        aux+=1
+      end
+      aux=0
+      print "--",@apvMensual,"--"
+  end
+
+
+
+    return @apvMensual
+  end
 
