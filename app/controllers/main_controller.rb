@@ -166,8 +166,7 @@ class MainController < ApplicationController
   end
 
 
-  def plataTotalEsperado
-
+  def plataTotalEsperado  #calculo de ahorros totales segun rentabilidad promedio
   cuota1 = @ahorrosPrevios
   aux = 0
   aux2 = 0
